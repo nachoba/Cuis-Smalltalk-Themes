@@ -1,13 +1,19 @@
-'From Cuis 4.2 of 25 July 2013 [latest update: #2568] on 30 October 2015 at 8:20:37.547843 pm'!
+'From Cuis 4.2 of 25 July 2013 [latest update: #2568] on 1 November 2015 at 5:32:06.7415 pm'!
+'Description Please enter a description for this package'!
+!provides: 'Theme-Themes' 1 0!
 !classDefinition: #AirTheme category: #'Theme-Themes'!
 Theme subclass: #AirTheme
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Theme-Themes'!
+!classDefinition: 'AirTheme class' category: #'Theme-Themes'!
+AirTheme class
+	instanceVariableNames: ''!
+
+
 !AirTheme commentStamp: '<historical>' prior: 0!
 A nice deep blue theme.!
-
 
 !AirTheme methodsFor: 'colors' stamp: 'IS 10/30/2015 19:29'!
 background
@@ -17,6 +23,38 @@ background
 buttonLabel
 	^ Color hue: 0 chroma: 0 luminance: 0.13! !
 
+!AirTheme methodsFor: 'tool colors' stamp: 'IS 10/30/2015 20:00'!
+defaultWindowColor
+	"^ Color hue: 0 chroma: 0 luminance: 1."
+	^ Color r: 0.686 g: 0.796 b: 0.910 alpha: 0.6! !
+
+!AirTheme methodsFor: 'other options' stamp: 'IS 10/30/2015 19:29'!
+embossedTitles
+	^true! !
+
+!AirTheme methodsFor: 'initialization' stamp: 'IS 10/30/2015 20:19'!
+initialize
+	super initialize.
+	self runningWorld backgroundImageData: nil.! !
+
+!AirTheme methodsFor: 'widget colors' stamp: 'IS 10/30/2015 19:29'!
+listSelectedRowText
+	^ Color white! !
+
+!AirTheme methodsFor: 'menu colors' stamp: 'IS 10/30/2015 20:07'!
+menu
+	"^ Color hue: 212 chroma: 0.6 luminance: 0.3"
+		^ Color r: 0.686 g: 0.796 b: 0.910 alpha:0.90! !
+
+!AirTheme methodsFor: 'menu colors' stamp: 'IS 10/30/2015 19:29'!
+menuText
+	"^ Color hue: 212 chroma: 0.3 luminance: 0.8"
+		^ Color hue: 0 chroma: 0 luminance: 0.13! !
+
+!AirTheme methodsFor: 'menu colors' stamp: 'IS 10/30/2015 19:29'!
+menuTitleBar
+	^ self menu twiceDarker! !
+
 !AirTheme methodsFor: 'colors' stamp: 'IS 10/30/2015 20:11'!
 paneBackgroundFrom: aColor
 	"^ Color hue: 0 chroma: 0 luminance: 1."
@@ -24,6 +62,14 @@ paneBackgroundFrom: aColor
 	
 	"^ (aColor alphaMixed: 0.2 with: Color blue ) alpha: 0.3"
 	^ Color r: 0.686 g: 0.796 b: 0.910 alpha:0.6! !
+
+!AirTheme methodsFor: 'other options' stamp: 'IS 10/30/2015 20:05'!
+roundButtons
+	^true! !
+
+!AirTheme methodsFor: 'other options' stamp: 'IS 10/30/2015 20:05'!
+roundWindowCorners
+	^false! !
 
 !AirTheme methodsFor: 'colors' stamp: 'IS 10/30/2015 20:14'!
 shout
@@ -75,30 +121,6 @@ textPane
 unfocusedTextHighlightFrom: aColor
 	^aColor adjustSaturation: 0.0 brightness: 0.08! !
 
-!AirTheme methodsFor: 'colors' stamp: 'IS 10/30/2015 19:29'!
-windowLabel
-	"^ Color hue: 0 chroma: 0.56 luminance: 0.45	"
-	^ Color r: 0.2 g: 0.2 b: 0.2! !
-
-
-!AirTheme methodsFor: 'tool colors' stamp: 'IS 10/30/2015 20:00'!
-defaultWindowColor
-	"^ Color hue: 0 chroma: 0 luminance: 1."
-	^ Color r: 0.686 g: 0.796 b: 0.910 alpha: 0.6! !
-
-
-!AirTheme methodsFor: 'other options' stamp: 'IS 10/30/2015 19:29'!
-embossedTitles
-	^true! !
-
-!AirTheme methodsFor: 'other options' stamp: 'IS 10/30/2015 20:05'!
-roundButtons
-	^true! !
-
-!AirTheme methodsFor: 'other options' stamp: 'IS 10/30/2015 20:05'!
-roundWindowCorners
-	^false! !
-
 !AirTheme methodsFor: 'other options' stamp: 'IS 10/30/2015 20:05'!
 useButtonGradient
 	^false! !
@@ -111,28 +133,7 @@ useUniformColors
 useWindowTitleGradient
 	^true! !
 
-
-!AirTheme methodsFor: 'widget colors' stamp: 'IS 10/30/2015 19:29'!
-listSelectedRowText
-	^ Color white! !
-
-
-!AirTheme methodsFor: 'menu colors' stamp: 'IS 10/30/2015 20:07'!
-menu
-	"^ Color hue: 212 chroma: 0.6 luminance: 0.3"
-		^ Color r: 0.686 g: 0.796 b: 0.910 alpha:0.90! !
-
-!AirTheme methodsFor: 'menu colors' stamp: 'IS 10/30/2015 19:29'!
-menuText
-	"^ Color hue: 212 chroma: 0.3 luminance: 0.8"
-		^ Color hue: 0 chroma: 0 luminance: 0.13! !
-
-!AirTheme methodsFor: 'menu colors' stamp: 'IS 10/30/2015 19:29'!
-menuTitleBar
-	^ self menu twiceDarker! !
-
-
-!AirTheme methodsFor: 'initialization' stamp: 'IS 10/30/2015 20:19'!
-initialize
-	super initialize.
-	self runningWorld backgroundImageData: nil.! !
+!AirTheme methodsFor: 'colors' stamp: 'IS 10/30/2015 19:29'!
+windowLabel
+	"^ Color hue: 0 chroma: 0.56 luminance: 0.45	"
+	^ Color r: 0.2 g: 0.2 b: 0.2! !
